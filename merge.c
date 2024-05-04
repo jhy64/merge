@@ -1,3 +1,4 @@
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -21,6 +22,7 @@ Node * newList( int num ){
     if( num == 0 ) {
         return 0;
     }
+    
     cur = (Node *)malloc( sizeof(Node) );
     cur->value = rand() % variance;
     cur->next = 0;
@@ -82,6 +84,7 @@ void cleanList( Node *a ) {
 
 void mergeTest() {
     int num = 10;
+    srand(time(NULL));
     Node *list1 = newList( num );
     Node *list2 = newList( num );
     printf("Before:\n");
